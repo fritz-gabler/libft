@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 20:47:38 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/15 10:13:22 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/15 11:46:45 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/15 12:24:15 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-void *ft_memmove(void *dst, const void *src, size_t len)
+#include <strings.h>
+#include <string.h>
+#include <stdio.h>
+
+void ft_bzero(void *s, size_t n)
 {
-	int i;
+	char *f;
 
-	i = 0;
-
-	if(dst > src)
+	f = (char *)s;
+	while(n--)
 	{
-		i = len;
-		while(i--)
-		{
-			((char*) dst)[i] = ((char *)src)[i];
-		}
-		return(s1);
+		*f++ = '\0';
 	}
-	while(i < n)
-	{
-		((char*) dst)[i] = ((char *)src)[i];
-		i++;
-	}
-	return(dst);
 }
-
-

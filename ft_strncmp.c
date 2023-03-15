@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 20:47:38 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/15 10:13:22 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/15 10:58:30 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/15 11:37:32 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
-void *ft_memmove(void *dst, const void *src, size_t len)
+#include <string.h>
+
+int ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 
-	if(dst > src)
+	while( i < n && str1[i] != '\0' && str2[i] != '\0')
 	{
-		i = len;
-		while(i--)
+		if(str1[i] != str2[i])
 		{
-			((char*) dst)[i] = ((char *)src)[i];
+			return (str1[i] - str2[i]);
 		}
-		return(s1);
-	}
-	while(i < n)
-	{
-		((char*) dst)[i] = ((char *)src)[i];
 		i++;
 	}
-	return(dst);
+	return(0);
 }
-
-
