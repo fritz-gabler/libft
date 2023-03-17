@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 15:05:09 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/16 18:53:17 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/16 16:42:30 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/16 19:20:03 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlen(const char *str)
- {
-	size_t i;
+#include <unistd.h>
+#include <stdio.h>
 
-	i = 0;
-	while(str[i])
+
+int ft_toupper(int ch)
+{
+	if(ch > 96 && ch < 123)
 	{
-		i++;
+		ch -= 32;
 	}
-	return(i);
- }
 
+	return (ch);
+}
+
+int main()
+{
+	int h = 'h';
+	printf("%c", ft_toupper(h));
+
+
+
+}

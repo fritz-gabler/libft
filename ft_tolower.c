@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 15:05:09 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/16 18:53:17 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/17 15:26:51 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/17 15:50:01 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlen(const char *str)
- {
-	size_t i;
-
-	i = 0;
-	while(str[i])
+#include <stdio.h>
+#include <ctype.h>
+int ft_tolower(int argument)
+{
+	if(argument > 64 && argument < 91)
 	{
-		i++;
+		argument += 32;
 	}
-	return(i);
- }
 
+	return (argument);
+}
+
+int main()
+{
+	int h = 'H';
+	printf("%c", ft_tolower('Z'));
+}

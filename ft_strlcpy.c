@@ -6,13 +6,14 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:28 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/15 13:13:32 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/17 15:36:27 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <unistd.h>
 #include <libf.h>
+
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t i;
@@ -29,3 +30,5 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (ft_strlen(src));
 }
+
+
