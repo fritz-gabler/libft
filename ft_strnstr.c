@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 15:52:34 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/20 11:02:16 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/20 13:23:41 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/20 13:57:42 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
-char	*ft_strchr(const char *str, int c)
+char *ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
+	int i;
+	char *tmp1;
+	char *tmp2;
 
+	tmp1 = (char *) big;
+	tmp2 = (char *) little;
 	i = 0;
-	while (str[i])
+	if (little == (void *) '\0')
 	{
-		if (str[i] == c)
+		return (tmp1);
+	}
+	while (len--)
+	{
+		if (big[i] == little[i])
 		{
-			return ((char *) str + i);
+			return (&tmp1[i]);
 		}
 		i++;
 	}
 	return (0);
+}
+
+int main()
+{
+	const char *largestring = "Foo Bar Baz";
+	const char *smallstring = "Bar";
+	char	*ptr;
+
+	ptr = ft_strnstr(largestring, smallstring, 7);
+	printf("%s", ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:46:45 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/15 12:24:15 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/20 11:02:37 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <string.h>
 #include <stdio.h>
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	char *f;
+	char	*f;
 
 	f = (char *)s;
-	while(n--)
+	while (n--)
 	{
 		*f++ = '\0';
 	}

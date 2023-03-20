@@ -6,13 +6,14 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 12:54:19 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/17 15:43:11 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/20 10:36:03 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "libft.h"
 
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -35,7 +36,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 		}
 	}
-	return (len + strlen((char *)src));
+	return (len + ft_strlen((char *)src));
 }
 
 int main()
@@ -46,8 +47,8 @@ int main()
     int size = 3;
     char buffer[50];
 
-    strcpy(buffer,first);
-    r = ft_strlcat(buffer,last,size);
+    ft_strlcpy(buffer,first, size);
+    r = ft_strlcat(buffer, last, size);
 
     puts(buffer);
     printf("Value returned: %d\n",r);

@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 15:01:14 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/20 12:12:44 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/20 11:03:43 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/20 11:48:59 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+size_t	ft_strlen(const char *str);
+
+char *ft_strrchr(const char *str, int c)
 {
-	if(c > 31 && c < 127)
+	int	i;
+	int	b;
+	i = 0;
+	i = ft_strlen(str) - 1;
+	while (str[i--])
 	{
-		retrun(0);
+		if (str[i] == c)
+		{
+			return ((char *) str + i);
+		}
 	}
-	retrun(0);
+	return (0);
+
 }
