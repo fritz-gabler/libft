@@ -5,33 +5,51 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 13:55:54 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/16 14:09:36 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/21 14:46:13 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/21 14:47:43 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-int main()
+
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	int i;
+	int	*tmp;
+	int	i;
 
 	i = 0;
-	char *s = (char *) calloc(5, sizeof (int) * 2);
-	for(int i = 0; i < 6; i++)
+	tmp = (int *) malloc(sizeof (int));
+	if (!tmp)
+		return (0);
+	while (size--)
 	{
-		s[i] = 's';
+		tmp[i] = '\0';
 	}
-	while(s[i])
-	{
-		i++;
-		printf("%c", *s);
-	}
-	for(int i = 0; i < 6; i++)
-	{
+	return (tmp);
+}
+#include <stdio.h>
+#include <stdlib.h>
 
-	}
-	printf("\n");
-	free(s);
-	return(0);
+int main ()
+{
+   int i, n;
+   int *a;
+
+   printf("Number of elements to be entered:");
+   scanf("%d",&n);
+
+   a = (int*)ft_calloc(n, sizeof(int));
+   printf("Enter %d numbers:\n",n);
+   for( i=0 ; i < n ; i++ ) {
+      scanf("%d",&a[i]);
+   }
+
+   printf("The numbers entered are: ");
+   for( i=0 ; i < n ; i++ ) {
+      printf("%d ",a[i]);
+   }
+   free( a );
+
+   return(0);
 }

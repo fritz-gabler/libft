@@ -6,14 +6,14 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 13:23:41 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/20 17:40:48 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/21 11:30:55 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-size_t ft_strlen(const char *str);
+
 
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -22,22 +22,23 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	while (len--)
+	if(little[i] == '\0')
 	{
-		if (big[i] == little[j])
+		return ((char *) big);
+	}
+	while (len-- && big[i])
+	{
+		while (little[j] == big[i])
 		{
-			while (little[i + j])
+			j++;
+			i++;
+			if (little[j] == '\0')
 			{
-				if (little[j])
-				{
-					return ((char *) &big[i]);
-				}
-				j++;
+				return ((char *) &big[i - j]);
 			}
-
 		}
-		j = 0;
 		i++;
+		j = 0;
 	}
 
 	return (0);

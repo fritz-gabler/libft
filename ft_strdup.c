@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 15:26:51 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/21 11:35:55 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/21 14:25:22 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/21 14:39:55 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
-
-int	ft_tolower(int argument)
+#include "libft.h"
+char	*strdup( const char *str1 )
 {
-	if (argument > 64 && argument < 91)
+	char *tmp;
+	unsigned int i;
+
+	tmp = (char *) ft_calloc(ft_strlen(str1) + 1, sizeof (char));
+	if (!tmp)
+		return (0);
+	while (str1[i])
 	{
-		argument += 32;
+		tmp[i] = str1[i];
+		i++;
 	}
 
-	return (argument);
-}
-
-int	main(void)
-{
-	int h = 'H';
-	printf("%c", ft_tolower('Z'));
+	return (tmp);
 }
