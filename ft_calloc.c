@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:46:13 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/21 14:47:43 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/22 11:59:26 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nitems, size_t size)
 	int	i;
 
 	i = 0;
-	tmp = (int *) malloc(sizeof (int));
+	tmp = (int *) malloc(sizeof (int) * nitems);
 	if (!tmp)
 		return (0);
 	while (size--)
@@ -53,3 +53,4 @@ int main ()
 
    return(0);
 }
+
