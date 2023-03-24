@@ -6,13 +6,11 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 11:46:45 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/20 11:02:37 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/22 15:05:23 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

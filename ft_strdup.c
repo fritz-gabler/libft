@@ -6,17 +6,19 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:25:22 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/21 14:39:55 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/24 16:12:12 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*strdup( const char *str1 )
-{
-	char *tmp;
-	unsigned int i;
 
-	tmp = (char *) ft_calloc(ft_strlen(str1) + 1, sizeof (char));
+char	*ft_strdup(const char *str1)
+{
+	char			*tmp;
+	unsigned int	i;
+
+	i = 0;
+	tmp = (char *) ft_calloc((ft_strlen(str1) + 1), sizeof (char));
 	if (!tmp)
 		return (0);
 	while (str1[i])
@@ -24,6 +26,5 @@ char	*strdup( const char *str1 )
 		tmp[i] = str1[i];
 		i++;
 	}
-
 	return (tmp);
 }

@@ -6,15 +6,15 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:18:41 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/20 12:52:44 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/22 16:09:31 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void *ft_memchr(const void *str, int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	char *temp;
+	char	*temp;
 
 	temp = (char *) str;
 	while (n--)
@@ -28,7 +28,7 @@ void *ft_memchr(const void *str, int c, size_t n)
 	return (0);
 }
 
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -43,3 +43,4 @@ int main () {
 
    return(0);
 }
+*/

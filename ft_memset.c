@@ -6,21 +6,20 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:32:30 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/16 15:55:44 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/22 16:17:03 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-void *ft_memset(void *b, int c, size_t len)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	char *f;
+	char	*f;
 
 	f = (char *) b;
-	while(len--)
+	while (len--)
 	{
 		*f++ = (char)c;
 	}
-	return(b);
+	return (b);
 }
-
-

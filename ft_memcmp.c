@@ -6,32 +6,33 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:54:26 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/20 13:08:30 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/22 17:08:05 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-	const char	*tmp1;
-	const char	*tmp2;
+	int		i;
+	char	*tmp1;
+	char	*tmp2;
 
-	tmp1 = (const char *) s1;
-	tmp2 = (const char *) s2;
+	i = 0;
+	tmp1 = (char *) s1;
+	tmp2 = (char *) s2;
 	while (n--)
 	{
 		if (tmp1[i] != tmp2[i])
 		{
-			return ((int) (tmp1[i] - tmp2[i]));
+			return ((int)(tmp1[i] - tmp2[i]));
 		}
 		i++;
 	}
 	return (0);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 
 int main ()
@@ -49,3 +50,4 @@ int main ()
 
   return 0;
 }
+*/

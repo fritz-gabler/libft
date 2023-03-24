@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 15:26:51 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/22 16:23:55 by fgabler          ###   ########.fr       */
+/*   Created: 2023/03/22 10:03:45 by fgabler           #+#    #+#             */
+/*   Updated: 2023/03/22 17:42:01 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	ft_tolower(int argument)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (argument > 64 && argument < 91)
+	unsigned int	i;
+	unsigned int	j;
+	char			*new;
+	unsigned int	len;
+
+	i = 0;
+	j = 0;
+	len = ft_strlen(s1) + ft_strlen(s2);
+	new = ft_calloc(len, sizeof (int));
+	if (!new)
+		return (0);
+	while (s1[i])
 	{
-		argument += 32;
+		new[i] = s1[i];
+		i++;
 	}
-	return (argument);
+	while (s2[j])
+	{
+		new[i] = s2[j];
+		j++;
+		i++;
+	}
+	return (new);
 }

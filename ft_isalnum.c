@@ -6,15 +6,15 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:12:48 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/16 17:57:03 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/22 17:15:19 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-	if(c >= 65 && c <= 91 || c >= 96 && c <= 123 || c >= 47 && c <= 58)
+	if ((c > 64 && c < 91) || (c > 96 && c < 123) || (c > 47 && c < 58))
 	{
-		return(1);
+		return (1);
 	}
-	return(0);
+	return (0);
 }

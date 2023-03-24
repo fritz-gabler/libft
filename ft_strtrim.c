@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:23:50 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/24 17:55:14 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/24 18:45:53 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,12 @@ int	ft_checkback(char const *str, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int			start;
-	int			end;
+	unsigned int			start;
+	unsigned int			end;
 
 	start = ft_checkfront(s1, set);
 	end = ft_checkback(s1, set);
-	return (ft_strdup(&s1[start]));
+	if (start == ft_strlen((char *) s1))
+		return (ft_strdup(""));
+	return (ft_substr(s1, start, ft_strlen(s1) - end - start));
 }

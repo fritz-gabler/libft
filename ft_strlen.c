@@ -6,21 +6,20 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:05:09 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/20 10:39:47 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/22 16:19:32 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-size_t ft_strlen(const char *str)
- {
-	size_t i;
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		i++;
 	}
-	return(i);
- }
-
+	return (i);
+}

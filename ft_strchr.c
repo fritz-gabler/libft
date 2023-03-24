@@ -6,12 +6,11 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 15:52:34 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/20 11:02:16 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/24 17:41:21 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -26,5 +25,7 @@ char	*ft_strchr(const char *str, int c)
 		}
 		i++;
 	}
+	if (str[i] == c)
+		return ((char *) str + i);
 	return (0);
 }

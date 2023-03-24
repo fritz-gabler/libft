@@ -6,14 +6,11 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:42:56 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/21 12:52:52 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/22 15:05:04 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int	ft_atoi(const char *str)
 {
@@ -40,20 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * neg);
 }
-
-
-int main () {
-   int val;
-   char str[20];
-
-   strcpy(str, "98993489");
-   val = ft_atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val + 1);
-
-   strcpy(str, "tutorialspoint.com");
-   val = ft_atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val);
-
-   return(0);
-}
-
