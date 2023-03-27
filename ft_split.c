@@ -6,59 +6,80 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:54:00 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/27 18:25:07 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/27 20:54:45 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check(char *s, char c)
+static int ft_sublen(const char *s, char c, unsigned int	start)
 {
-	int	i;
-	int	j;
+	unsigned int	len;
 
 	i = 0;
-	j = 0;
+	if (s[start + i] != c)
+		len++;
+	return (len);
+}
+static void	ft_allocate(const char *s, char c, char **ret)
+{
+	unsigned int	start;
+	unsigned int	sublen;
+	unsigned int	strlen;
+	unsigned int	loc;
+
+	loc = 0;
+	len = strlen(s);
+	while ((len--))
+	{
+		while (s[start] == c)
+		{
+			start++;
+		}
+		if (s[start] != c)
+		{
+			sublen = ft_findsublen(s[start] , c, start);
+		}
+		ret[loc] = substr(s, start, sublen);
+	}
+}
+
+static int	ft_getword(const char *s, char c)
+{
+	unsigned int	i;
+	unsigned int	word;
+	int				guard;
+
+	i = 0;
+	word = 0;
+	guard = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-			j++;
+		if (s[i] != c && guard == 0)
+		{
+			word++;
+			guard = 1;
+		}
+		else if (s[i] == c && guard == 1)
+		{
+			guard = 0;
+		}
 		i++;
 	}
-	return (j);
-}
-int	ft_locate(const *s, char c)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] != c && )
-		{
-
-		}
-	}
-	return (0);
+	printf("%d", word);
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**h;
-	int		chek;
+	char			**ret;
+	unsigned int	i;
 
-	chek = ft_check((char *)s, c);
-	h = ft_calloc(chek * (strlen(s) - chek), sizeof (int));
-	printf("%d", ft_check((char *)s, c));
-	return (h);
-}
+	ret = (char *) calloc(ft_getword(s, c) + 1, sizeof (char **));
+	if (!ret)
+		return (NULL);
+	i = 0;
+	ft_allocate(s, c, ret);
 
-int	main(void)
-{
-	char	i = 'l';
-	char	s[] = "hello";
-
-	ft_split(s, i);
-	return (0);
+	return (ret);
 }
