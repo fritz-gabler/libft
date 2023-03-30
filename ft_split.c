@@ -6,30 +6,34 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:54:00 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/27 20:54:45 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/30 19:02:29 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_sublen(const char *s, char c, unsigned int	start)
+static int	ft_sublen(const char *s, char c, unsigned int start)
 {
 	unsigned int	len;
+	unsigned int	i;
 
 	i = 0;
 	if (s[start + i] != c)
 		len++;
 	return (len);
 }
+
 static void	ft_allocate(const char *s, char c, char **ret)
 {
 	unsigned int	start;
 	unsigned int	sublen;
 	unsigned int	strlen;
 	unsigned int	loc;
+	unsigned int	len;
 
 	loc = 0;
-	len = strlen(s);
+	len = ft_strlen(s);
+	start = 0;
 	while ((len--))
 	{
 		while (s[start] == c)
@@ -38,9 +42,9 @@ static void	ft_allocate(const char *s, char c, char **ret)
 		}
 		if (s[start] != c)
 		{
-			sublen = ft_findsublen(s[start] , c, start);
+			sublen = ft_sublen(s, c, start);
 		}
-		ret[loc] = substr(s, start, sublen);
+		ret[loc] = ft_substr(s, start, sublen);
 	}
 }
 
@@ -75,11 +79,10 @@ char	**ft_split(char const *s, char c)
 	char			**ret;
 	unsigned int	i;
 
-	ret = (char *) calloc(ft_getword(s, c) + 1, sizeof (char **));
+	ret = (char **) ft_calloc(ft_getword(s, c) + 1, sizeof (char **));
 	if (!ret)
 		return (NULL);
 	i = 0;
 	ft_allocate(s, c, ret);
-
 	return (ret);
 }
