@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:54:00 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/30 19:02:29 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/31 21:51:15 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,13 @@
 static int	ft_sublen(const char *s, char c, unsigned int start)
 {
 	unsigned int	len;
-	unsigned int	i;
 
-	i = 0;
-	if (s[start + i] != c)
+	len = 0;
+	while (s[start + len] != c)
+		if (!ft_strchr(s, c))
+			return (len = ft_strlen(s));
 		len++;
 	return (len);
-}
-
-static void	ft_allocate(const char *s, char c, char **ret)
-{
-	unsigned int	start;
-	unsigned int	sublen;
-	unsigned int	strlen;
-	unsigned int	loc;
-	unsigned int	len;
-
-	loc = 0;
-	len = ft_strlen(s);
-	start = 0;
-	while ((len--))
-	{
-		while (s[start] == c)
-		{
-			start++;
-		}
-		if (s[start] != c)
-		{
-			sublen = ft_sublen(s, c, start);
-		}
-		ret[loc] = ft_substr(s, start, sublen);
-	}
 }
 
 static int	ft_getword(const char *s, char c)
@@ -70,19 +46,51 @@ static int	ft_getword(const char *s, char c)
 		}
 		i++;
 	}
-	printf("%d", word);
 	return (word);
+}
+
+static void	ft_free(char **ret, unsigned int freeit)
+{
+	while (ret[freeit])
+		free ((void *)(ret[freeit++]));
+	return ((void) NULL);
+}
+
+static void	ft_allocate(const char *s, char c, char **ret)
+{
+	unsigned int	start;
+	unsigned int	sublen;
+	unsigned int	loc;
+	unsigned int	len;
+	unsigned int	freeit;
+
+	loc = 0;
+	len = ft_getword(s, c);
+	start = 0;
+	freeit = 0;
+	while ((len--))
+	{
+		while (s[start] == c)
+		{
+			start++;
+		}
+		if (s[start] != c)
+			sublen = ft_sublen(s, c, start);
+		ret[loc++] = ft_substr(s, start, sublen);
+		if (!ret)
+			ft_free(ret, freeit);
+		if (s[start])
+				start = start + sublen;
+	}
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char			**ret;
-	unsigned int	i;
 
-	ret = (char **) ft_calloc(ft_getword(s, c) + 1, sizeof (char **));
+	ret = (char **)ft_calloc (ft_getword(s, c) + 1, sizeof (char *));
 	if (!ret)
 		return (NULL);
-	i = 0;
 	ft_allocate(s, c, ret);
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:23:50 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/24 18:45:53 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/03/27 18:15:42 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 	i = 0;
 	if (str == )
 }*/
-int	ft_checkfront(char const *str, char const *set)
+static int	ft_checkfront(char const *str, char const *set)
 {
 	unsigned int	i;
 
@@ -36,7 +36,7 @@ int	ft_checkfront(char const *str, char const *set)
 	return (i);
 }
 
-int	ft_checkback(char const *str, char const *set)
+static int	ft_checkback(char const *str, char const *set)
 {
 	unsigned int	len;
 	unsigned int	i;
