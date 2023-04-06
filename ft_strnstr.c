@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 13:23:41 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/22 16:23:15 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/06 19:59:41 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	while (len-- && big[i])
 	{
-		while (little[j] == big[i])
+		while (big[i] == little[j])
 		{
 			j++;
 			i++;

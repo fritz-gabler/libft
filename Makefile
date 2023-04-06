@@ -18,6 +18,7 @@ BONI :=	ft_lstnew.c ft_lstadd_front.c\
 
 HEADER	:= -c -I libft
 OBJS	:= $(SRCS:.c=.o)
+BONIOBJ	:= $(BONI:.c=.o)
 RM		:= rm -f
 CC		:= cc
 
@@ -26,8 +27,9 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 	@ar rcs $@ $^
 
-bouns: $(OBJS) $(BONI)
-	@ar rcs
+bonus: $(OBJS) $(BONIOBJ)
+	@ar rcs $(NAME)	$^
+
 clean:
 	@$(RM) $(OBJS)
 

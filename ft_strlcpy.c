@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 12:26:28 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/22 16:18:38 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/06 16:59:59 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
+	if (dstsize == 0)
+		return (ft_strlen((char *) src));
 	if (dstsize != 0)
 	{
-		while (i < dstsize - 1)
+		while (i < dstsize - 1 && src[i] != '\0')
 		{
 			dst[i] = src[i];
 			i++;
