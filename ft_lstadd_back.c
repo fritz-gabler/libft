@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 20:47:38 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/04 13:59:38 by fritzgabler      ###   ########.fr       */
+/*   Created: 2023/04/04 16:44:18 by fritzgabler       #+#    #+#             */
+/*   Updated: 2023/04/05 18:42:09 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t		i;
+	t_list	*current;
 
-	i = 0;
-	if (!dst && !src)
-		return (NULL);
-	if (dst > src)
+	current = *lst;
+	while (current->next)
 	{
-		i = len;
-		while (i--)
-		{
-			((char *) dst)[i] = ((char *)src)[i];
-		}
-		return (dst);
+		current = current->next;
 	}
-	while (i < len)
-	{
-		((char *) dst)[i] = ((char *)src)[i];
-		i++;
-	}
-	return (dst);
+	current->next = new;
 }

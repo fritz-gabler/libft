@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 20:47:38 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/04 13:59:38 by fritzgabler      ###   ########.fr       */
+/*   Created: 2023/04/05 12:20:44 by fritzgabler       #+#    #+#             */
+/*   Updated: 2023/04/05 19:09:45 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	size_t		i;
+	t_list	*tmp;
+	t_list	*curr;
 
-	i = 0;
-	if (!dst && !src)
-		return (NULL);
-	if (dst > src)
+	curr = *lst;
+	if (lst)
 	{
-		i = len;
-		while (i--)
+		while (*lst)
 		{
-			((char *) dst)[i] = ((char *)src)[i];
+			tmp = curr;
+			curr = curr->next;
+			del(tmp);
 		}
-		return (dst);
+		*lst = NULL;
 	}
-	while (i < len)
-	{
-		((char *) dst)[i] = ((char *)src)[i];
-		i++;
-	}
-	return (dst);
+
+
 }
