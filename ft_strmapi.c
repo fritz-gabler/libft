@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 16:25:55 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/01 17:19:37 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/07 11:46:06 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	return (str);
-
 }

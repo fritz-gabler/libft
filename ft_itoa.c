@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 17:55:48 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/25 23:59:30 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/07 12:30:09 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,23 @@ unsigned int	ft_pow(int y)
 
 void	ft_checknum(int num, char *str, unsigned int i)
 {
-	if (num < 0)
+	if (ft_isalnum(num))
 	{
-		str[i] = '-';
-		num *= -1;
-		i++;
-	}
-	if (num > 9)
-	{
-		str[i] = num / ft_pow(ft_intlen(num)) + 48;
-		num = num - (num / ft_pow(ft_intlen(num)) * ft_pow(ft_intlen(num)));
-		i++;
-		ft_checknum(num, str, i);
-	}
-	if (num < 9)
-	{
-		str[i] = num + '0';
+		if (num < 0)
+		{
+			str[i] = '-';
+			num *= -1;
+			i++;
+		}
+		if (num > 9)
+		{
+			str[i] = num / ft_pow(ft_intlen(num)) + 48;
+			num = num - (num / ft_pow(ft_intlen(num)) * ft_pow(ft_intlen(num)));
+			i++;
+			ft_checknum(num, str, i);
+		}
+		if (num < 9)
+			str[i] = num + '0';
 	}
 }
 

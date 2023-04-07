@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 16:12:46 by fritzgabler       #+#    #+#             */
-/*   Updated: 2023/04/07 11:45:44 by fgabler          ###   ########.fr       */
+/*   Created: 2023/04/07 14:06:40 by fgabler           #+#    #+#             */
+/*   Updated: 2023/04/07 15:30:16 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	main(void)
 {
-	int		i;
-	t_list	*current;
-
-	current = lst;
-	i = 0;
-	while (current)
-		i++;
-		current = current->next;
-	return (i);
+	printf("%d\n", ft_atoi("\t\n\r\v\fd469 \n"));
+	return (0);
 }

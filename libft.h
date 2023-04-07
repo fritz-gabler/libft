@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:56:04 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/05 19:14:32 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/04/07 11:49:27 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef LIBFT_H
+#	ifndef LIBFT_H
 # define LIBFT_H
 
 # include <stdlib.h>
@@ -19,11 +19,11 @@
 # include <stdint.h>
 # include <stdio.h> // remove!!
 
-typedef struct	s_list
+typedef struct s_list
 {
-void	*content;
-struct	s_list *next;
-} t_list;
+	void				*content;
+	struct s_list		*next;
+}	t_list;
 
 /* libc */
 int		ft_isalpha(int c);

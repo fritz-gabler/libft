@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 12:20:44 by fritzgabler       #+#    #+#             */
-/*   Updated: 2023/04/05 19:09:45 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/04/07 11:45:14 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		}
 		*lst = NULL;
 	}
-
-
 }
