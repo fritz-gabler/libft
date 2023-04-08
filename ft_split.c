@@ -3,24 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:54:00 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/04 13:45:08 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/04/08 17:48:08 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 static int	ft_sublen(const char *s, char c, unsigned int start)
 {
 	unsigned int	len;
 
 	len = 0;
-	while (s[start + len] != c)
-		if (!ft_strchr(s, c))
-			return (len = ft_strlen(s));
+	if (!ft_strchr(s, c))
+		return (len = ft_strlen(s));
+	while (s[start + len] && s[start + len] != c)
+	{
 		len++;
+	}
 	return (len);
 }
 
@@ -49,11 +52,19 @@ static int	ft_getword(const char *s, char c)
 	return (word);
 }
 
-static void	ft_free(char **ret, unsigned int freeit)
+static void	ft_free(char **ret)
 {
+	unsigned int	freeit;
+
+	freeit = 0;
+	if (!ret)
+		return ;
 	while (ret[freeit])
-		free ((void *)(ret[freeit++]));
-	return ((void) NULL);
+	{
+		// printf("%d\n", freeit);
+		free (ret[freeit]);freeit++;}
+
+	free (ret);
 }
 
 static void	ft_allocate(const char *s, char c, char **ret)
@@ -71,26 +82,49 @@ static void	ft_allocate(const char *s, char c, char **ret)
 	while ((len--))
 	{
 		while (s[start] == c)
-		{
 			start++;
-		}
 		if (s[start] != c)
 			sublen = ft_sublen(s, c, start);
-		ret[loc++] = ft_substr(s, start, sublen);
-		if (!ret)
-			ft_free(ret, freeit);
+		ret[loc] = ft_substr(s, start, sublen);
+		// printf("%d\n", len);
+		if (!ret[loc])
+		{
+			ft_free(ret);
+			return ;
+		}
 		if (s[start])
 				start = start + sublen;
+		loc++;
 	}
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char			**ret;
+	int				count;
 
+	count = ft_getword(s, c);
 	ret = (char **)ft_calloc (ft_getword(s, c) + 1, sizeof (char *));
 	if (!ret)
-		return (NULL);
+		return NULL;
+	// printf("%p\n", ret);
 	ft_allocate(s, c, ret);
+	// printf("here\n");
+	while (count--)
+	{
+	// printf("%p\n", ret[count]);
+		if (!ret[count])
+		{
+			// ft_free(ret);
+			return (NULL);
+		}
+	}
+	// while (i <= count)
+	// {
+	// 	if (!ret[i])
+	// 		ft_free(ret, ft_getword(s, c));
+	// 	i++;
+	// }
 	return (ret);
 }
+

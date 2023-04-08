@@ -38,3 +38,6 @@ fclean:	clean
 
 re:			fclean $(NAME)
 
+test:all
+	cc main.c libft.a;
+	./a.out;

@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 20:02:31 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/07 11:46:19 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/08 17:30:23 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (size - start < len)
 		len = size;
 	sub = (char *) ft_calloc((len + 1), sizeof (char));
+	if (!sub)
+		return (NULL);
 	while (len-- && s[start + i])
 	{
 		sub[i] = s[start + i];
