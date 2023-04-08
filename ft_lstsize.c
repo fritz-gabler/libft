@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:12:46 by fritzgabler       #+#    #+#             */
-/*   Updated: 2023/04/07 11:45:44 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/07 20:59:06 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	ft_lstsize(t_list *lst)
 	current = lst;
 	i = 0;
 	while (current)
+	{
 		i++;
 		current = current->next;
+	}
 	return (i);
 }

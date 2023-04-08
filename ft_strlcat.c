@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 12:54:19 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/06 18:39:35 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/07 20:35:07 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	count = dstsize - dst_len - 1;
 	if (!dst && dstsize == 0)
 		return (0);
-	if (src_len > dstsize)
+	if (dst_len > dstsize)
 		return (src_len + dstsize);
 	if (count > 0 && src[i] != '\0')
 	{
