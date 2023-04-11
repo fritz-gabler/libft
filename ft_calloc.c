@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:46:13 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/09 10:25:49 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/04/11 13:53:27 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*tmp;
 
+	if (nitems == 0)
+		return (NULL);
 	if (nitems * size / nitems != size)
 		return (NULL);
 	tmp = malloc(size * nitems);

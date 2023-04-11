@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:54:00 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/09 10:21:02 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/04/11 17:53:00 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,12 @@ static int	ft_getword(const char *s, char c)
 	return (word);
 }
 
-static void	ft_free(char **ret)
+static void	ft_free(char **ret, int len)
 {
-	unsigned int	freeit;
+	int	freeit;
 
 	freeit = 0;
-	if (!ret)
-		return ;
-	while (ret[freeit])
+	while (freeit < len)
 	{
 		free (ret[freeit]);
 		freeit++;
@@ -85,7 +83,7 @@ static void	ft_allocate(const char *s, char c, char **ret)
 		ret[loc] = ft_substr(s, start, sublen);
 		if (!ret[loc])
 		{
-			ft_free(ret);
+			ft_free(ret, ft_getword(s, c));
 			return ;
 		}
 		if (s[start])
@@ -99,6 +97,8 @@ char	**ft_split(char const *s, char c)
 	char			**ret;
 	int				count;
 
+	if (!s)
+		return (NULL);
 	count = ft_getword(s, c);
 	ret = (char **)ft_calloc (ft_getword(s, c) + 1, sizeof (char *));
 	if (!ret)

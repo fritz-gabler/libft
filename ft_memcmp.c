@@ -6,7 +6,7 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 12:54:26 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/22 17:08:05 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/11 13:22:33 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int		i;
-	char	*tmp1;
-	char	*tmp2;
+	unsigned int	i;
+	unsigned char	*tmp1;
+	unsigned char	*tmp2;
 
 	i = 0;
-	tmp1 = (char *) s1;
-	tmp2 = (char *) s2;
-	while (n--)
+	tmp1 = (unsigned char *) s1;
+	tmp2 = (unsigned char *) s2;
+	while (n)
 	{
-		if (tmp1[i] != tmp2[i])
+		if (tmp1[i] != tmp2[i] && n)
 		{
-			return ((int)(tmp1[i] - tmp2[i]));
+			return (tmp1[i] - tmp2[i]);
 		}
+		n--;
 		i++;
 	}
 	return (0);
