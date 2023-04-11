@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 17:55:48 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/08 22:18:40 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/09 10:22:18 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,10 @@ void	ft_checknum(int num, char *str, unsigned int i)
 	{
 		str[i] = (num % 10) + '0';
 		num = num / 10;
-		// printf("%d\n", i);
 		i--;
 		ft_checknum(num, str, i);
 	}
 }
-
 
 char	*ft_itoa(int n)
 {

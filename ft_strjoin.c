@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 10:03:45 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/22 17:42:01 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/09 11:01:12 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	len = ft_strlen(s1) + ft_strlen(s2);
-	new = ft_calloc(len, sizeof (int));
+	new = ft_calloc(len + 1, sizeof (int));
+	if (s1[i] == '\0' && s2[j] == '\0')
+		return (ft_strdup(""));
 	if (!new)
 		return (0);
 	while (s1[i])

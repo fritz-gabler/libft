@@ -6,7 +6,7 @@
 /*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 12:20:44 by fritzgabler       #+#    #+#             */
-/*   Updated: 2023/04/08 15:12:47 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/04/09 10:45:52 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*tmp;
-	t_list	*curr;
 
-	curr = *lst;
+	if (!*lst || !del)
+		return ;
 	if (lst)
 	{
 		while (*lst)
 		{
-			tmp = curr;
-			curr = curr->next;
-			del(tmp);
+			tmp = (*lst)->next;
+			del((*lst)->content);
+			free(*lst);
+			(*lst) = tmp;
 		}
-		*lst = NULL;
+		free(*lst);
 	}
 }

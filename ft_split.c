@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:54:00 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/08 17:48:08 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/09 10:21:02 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static int	ft_sublen(const char *s, char c, unsigned int start)
 {
@@ -61,9 +60,9 @@ static void	ft_free(char **ret)
 		return ;
 	while (ret[freeit])
 	{
-		// printf("%d\n", freeit);
-		free (ret[freeit]);freeit++;}
-
+		free (ret[freeit]);
+		freeit++;
+	}
 	free (ret);
 }
 
@@ -73,12 +72,10 @@ static void	ft_allocate(const char *s, char c, char **ret)
 	unsigned int	sublen;
 	unsigned int	loc;
 	unsigned int	len;
-	unsigned int	freeit;
 
 	loc = 0;
 	len = ft_getword(s, c);
 	start = 0;
-	freeit = 0;
 	while ((len--))
 	{
 		while (s[start] == c)
@@ -86,7 +83,6 @@ static void	ft_allocate(const char *s, char c, char **ret)
 		if (s[start] != c)
 			sublen = ft_sublen(s, c, start);
 		ret[loc] = ft_substr(s, start, sublen);
-		// printf("%d\n", len);
 		if (!ret[loc])
 		{
 			ft_free(ret);
@@ -106,25 +102,12 @@ char	**ft_split(char const *s, char c)
 	count = ft_getword(s, c);
 	ret = (char **)ft_calloc (ft_getword(s, c) + 1, sizeof (char *));
 	if (!ret)
-		return NULL;
-	// printf("%p\n", ret);
+		return (NULL);
 	ft_allocate(s, c, ret);
-	// printf("here\n");
 	while (count--)
 	{
-	// printf("%p\n", ret[count]);
 		if (!ret[count])
-		{
-			// ft_free(ret);
 			return (NULL);
-		}
 	}
-	// while (i <= count)
-	// {
-	// 	if (!ret[i])
-	// 		ft_free(ret, ft_getword(s, c));
-	// 	i++;
-	// }
 	return (ret);
 }
-
