@@ -37,7 +37,3 @@ fclean:	clean
 	@$(RM) $(OBJS) $(NAME)
 
 re:			fclean $(NAME)
-
-test:all
-	cc main.c libft.a;
-	./a.out;
