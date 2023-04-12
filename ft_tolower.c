@@ -6,12 +6,11 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 15:26:51 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/22 16:23:55 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/12 17:26:11 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_tolower(int argument)
 {

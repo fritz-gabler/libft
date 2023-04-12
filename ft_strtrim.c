@@ -6,20 +6,12 @@
 /*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:23:50 by fgabler           #+#    #+#             */
-/*   Updated: 2023/03/27 18:15:42 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/12 17:25:55 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-/*int	ft_checkback(char *str, char *set)
-{
-	unsigned int	i;
-
-	i = 0;
-	if (str == )
-}*/
 static int	ft_checkfront(char const *str, char const *set)
 {
 	unsigned int	i;
