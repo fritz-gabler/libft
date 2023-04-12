@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 13:54:00 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/11 22:09:04 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/04/12 11:26:36 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,5 @@ char	**ft_split(char const *s, char c)
 	if (!ret)
 		return (NULL);
 	ft_allocate(s, c, ret);
-	// while (count--)
-	// {
-	// 	if (!ret[count])
-	// 		return (NULL);
-	// }
 	return (ret);
 }

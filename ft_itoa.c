@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
+/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 17:55:48 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/09 10:22:18 by fritzgabler      ###   ########.fr       */
+/*   Updated: 2023/04/12 11:41:30 by fgabler          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
-		str = (char *) ft_calloc((ft_intlen(n) + 5), sizeof(char));
+		str = (char *) ft_calloc((ft_intlen(n) + 1), sizeof(char));
 		if (!str)
 			return (NULL);
 		str[0] = '-';
@@ -75,7 +75,7 @@ char	*ft_itoa(int n)
 	}
 	else
 	{
-		str = (char *) ft_calloc((ft_intlen(n) + 5), sizeof(char));
+		str = (char *) ft_calloc((ft_intlen(n) + 1), sizeof(char));
 		if (!str)
 			return (NULL);
 		ft_checknum(n, str, ft_intlen(n) - 1);
