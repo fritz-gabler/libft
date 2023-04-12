@@ -31,9 +31,9 @@ bonus: $(OBJS) $(BONIOBJ)
 	@ar rcs $(NAME)	$^
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(BONIOBJ)
 
 fclean:	clean
-	@$(RM) $(OBJS) $(NAME)
+	@$(RM) $(OBJS) $(NAME) $(BONIOBJ)
 
 re:			fclean $(NAME)
