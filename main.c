@@ -3,17 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgabler <fgabler@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fritzgabler <fritzgabler@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 14:06:40 by fgabler           #+#    #+#             */
-/*   Updated: 2023/04/07 15:30:16 by fgabler          ###   ########.fr       */
+/*   Updated: 2023/04/11 22:15:48 by fritzgabler      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
-{
-	printf("%d\n", ft_atoi("\t\n\r\v\fd469 \n"));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char **s;
+
+// 	s = ft_split("hello!", ' ');
+// 	for(int i = 0; i < 5; i++){
+// 		printf("%s\n", s[i]);
+// 	}
+// 	return (0);
+// }
